@@ -10,14 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg: #F7F4ED;
-  --bg-deep: #F0ECE2;
-  --ink: #3A3835;
-  --ink-soft: #6B6760;
-  --amber: #B07D2B;
-  --amber-deep: #96691F;
-  --green: #3E5C46;
-  --line: #DDD6C8;
+  --bg: #F7F4ED;          /* 生成り・アイボリー */
+  --bg-deep: #F0ECE2;     /* 少し深い生成り */
+  --ink: #3A3835;         /* 墨色・チャコール */
+  --ink-soft: #6B6760;    /* 補助テキスト */
+  --amber: #B07D2B;       /* 琥珀 */
+  --amber-deep: #96691F;  /* 琥珀・濃 */
+  --green: #3E5C46;       /* フォレストグリーン */
+  --line: #DDD6C8;        /* 区切り線 */
   --serif: 'Shippori Mincho', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
   --sans: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif;
 }
@@ -33,6 +33,8 @@ body{
   font-size:16px;
   -webkit-font-smoothing:antialiased;
 }
+
+/* ---------- 共通 ---------- */
 .container{max-width:720px;margin:0 auto;padding:0 24px;}
 .wide{max-width:960px;}
 section{padding:110px 0;}
@@ -59,12 +61,16 @@ p:last-child{margin-bottom:0;}
   margin:0 auto;
 }
 .center{text-align:center;}
-.fade{opacity:0;transform:translateY(16px);transition:opacity 1.1s ease,transform 1.1s ease;}
-.fade.visible{opacity:1;transform:none;}
+
+/* フェードイン */
+.fade{opacity:1;}
+.fade.hidden{opacity:0;transform:translateY(16px);transition:opacity 1.1s ease,transform 1.1s ease;}
 @media (prefers-reduced-motion: reduce){
-  .fade{opacity:1;transform:none;transition:none;}
+  .fade.hidden{opacity:1;transform:none;transition:none;}
   html{scroll-behavior:auto;}
 }
+
+/* ---------- ヘッダー ---------- */
 header{
   padding:32px 0;
   border-bottom:1px solid var(--line);
@@ -91,6 +97,8 @@ nav a{
 }
 nav a:hover{color:var(--amber);}
 @media(max-width:640px){ nav{display:none;} }
+
+/* ---------- ヒーロー ---------- */
 .hero{
   padding:130px 0 110px;
 }
@@ -118,6 +126,8 @@ nav a:hover{color:var(--amber);}
   font-size:13px;
   letter-spacing:0.15em;
 }
+
+/* ---------- こんな感覚 ---------- */
 .voices{background:var(--bg-deep);}
 .voice-list{
   list-style:none;
@@ -139,6 +149,8 @@ nav a:hover{color:var(--amber);}
   color:var(--ink-soft);
   font-size:15px;
 }
+
+/* ---------- 思想 ---------- */
 .philosophy .keyline{
   font-family:var(--serif);
   font-size:clamp(19px,3vw,24px);
@@ -178,6 +190,8 @@ nav a:hover{color:var(--amber);}
 @media(max-width:640px){
   .contrast{grid-template-columns:1fr;}
 }
+
+/* ---------- 仕組み ---------- */
 .system{background:var(--bg-deep);}
 .system-grid{
   display:grid;
@@ -234,6 +248,8 @@ nav a:hover{color:var(--amber);}
   color:var(--green);
   margin-bottom:18px;
 }
+
+/* ---------- 主宰者 ---------- */
 .host-inner{
   display:grid;
   grid-template-columns:200px 1fr;
@@ -273,6 +289,8 @@ nav a:hover{color:var(--amber);}
   .host-inner{grid-template-columns:1fr;}
   .host-photo{max-width:220px;}
 }
+
+/* ---------- 参加案内 ---------- */
 .join{background:var(--bg-deep);}
 .join-table{
   width:100%;
@@ -295,6 +313,8 @@ nav a:hover{color:var(--amber);}
 }
 .join-table td{font-family:var(--serif);}
 .note{font-size:13px;color:var(--ink-soft);}
+
+/* ---------- CTA ---------- */
 .cta{
   text-align:center;
   padding:120px 0;
@@ -320,6 +340,8 @@ nav a:hover{color:var(--amber);}
   font-size:13px;
   color:var(--ink-soft);
 }
+
+/* ---------- フッター ---------- */
 footer{
   border-top:1px solid var(--line);
   padding:56px 0;
@@ -362,6 +384,7 @@ footer .copy{
   </div>
 </header>
 
+<!-- ヒーロー -->
 <section class="hero" id="top">
   <div class="container">
     <div class="hero-copy fade">
@@ -390,6 +413,7 @@ footer .copy{
   </div>
 </section>
 
+<!-- こんな感覚 -->
 <section class="voices">
   <div class="container">
     <div class="center fade">
@@ -408,6 +432,7 @@ footer .copy{
   </div>
 </section>
 
+<!-- 灯サロンとは -->
 <section class="philosophy" id="about">
   <div class="container">
     <p class="eyebrow fade">灯サロンとは</p>
@@ -447,6 +472,7 @@ footer .copy{
   </div>
 </section>
 
+<!-- 仕組み -->
 <section class="system" id="system">
   <div class="container">
     <p class="eyebrow fade">サロンの仕組み</p>
@@ -517,6 +543,7 @@ footer .copy{
   </div>
 </section>
 
+<!-- 主宰者 -->
 <section id="host">
   <div class="container wide">
     <p class="eyebrow fade">主宰者</p>
@@ -545,6 +572,7 @@ footer .copy{
   </div>
 </section>
 
+<!-- 参加案内 -->
 <section class="join" id="join">
   <div class="container">
     <p class="eyebrow fade">参加案内</p>
@@ -577,6 +605,7 @@ footer .copy{
   </div>
 </section>
 
+<!-- CTA -->
 <section class="cta">
   <div class="container">
     <div class="fade">
@@ -599,3 +628,28 @@ footer .copy{
       <a href="#" aria-label="X">X</a>
     </p>
     <p class="copy">&copy; 2026 灯サロン</p>
+  </div>
+</footer>
+
+<script>
+try{
+  const els = document.querySelectorAll('.fade');
+  if('IntersectionObserver' in window){
+    els.forEach(el=>el.classList.add('hidden'));
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.remove('hidden');
+          obs.unobserve(e.target);
+        }
+      });
+    },{threshold:0.12});
+    els.forEach(el=>obs.observe(el));
+  }
+}catch(e){
+  console.error(e);
+}
+</script>
+
+</body>
+</html>
