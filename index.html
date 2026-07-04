@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>灯サロン｜支える人が、自分自身も支えられながら、関係性を育み直す場所</title>
+<meta name="description" content="灯サロンは、人を支える立場にある人が、自分の言葉で語り、互いの言葉に耳を傾け、人との関わり方を育み直す月額制の対話コミュニティです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg: #F7F4ED;
+  --bg-deep: #F0ECE2;
+  --ink: #3A3835;
+  --ink-soft: #6B6760;
+  --amber: #B07D2B;
+  --amber-deep: #96691F;
+  --green: #3E5C46;
+  --line: #DDD6C8;
+  --serif: 'Shippori Mincho', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+  --sans: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:400;
+  line-height:2.1;
+  letter-spacing:0.04em;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:720px;margin:0 auto;padding:0 24px;}
+.wide{max-width:960px;}
+section{padding:110px 0;}
+.eyebrow{
+  font-family:var(--sans);
+  font-size:12px;
+  letter-spacing:0.35em;
+  color:var(--amber);
+  margin-bottom:28px;
+  font-weight:500;
+}
+h2{
+  font-family:var(--serif);
+  font-weight:500;
+  font-size:clamp(24px,4vw,32px);
+  line-height:1.8;
+  letter-spacing:0.06em;
+  margin-bottom:48px;
+}
+p{margin-bottom:1.6em;}
+p:last-child{margin-bottom:0;}
+.divider{
+  width:48px;height:1px;background:var(--green);
+  margin:0 auto;
+}
+.center{text-align:center;}
+.fade{opacity:0;transform:translateY(16px);transition:opacity 1.1s ease,transform 1.1s ease;}
+.fade.visible{opacity:1;transform:none;}
+@media (prefers-reduced-motion: reduce){
+  .fade{opacity:1;transform:none;transition:none;}
+  html{scroll-behavior:auto;}
+}
+header{
+  padding:32px 0;
+  border-bottom:1px solid var(--line);
+  background:var(--bg);
+}
+.header-inner{
+  max-width:960px;margin:0 auto;padding:0 24px;
+  display:flex;justify-content:space-between;align-items:baseline;
+}
+.logo{
+  font-family:var(--serif);
+  font-size:20px;
+  letter-spacing:0.2em;
+  color:var(--ink);
+  text-decoration:none;
+}
+.logo span{color:var(--amber);}
+nav a{
+  font-size:13px;
+  color:var(--ink-soft);
+  text-decoration:none;
+  margin-left:28px;
+  letter-spacing:0.1em;
+}
+nav a:hover{color:var(--amber);}
+@media(max-width:640px){ nav{display:none;} }
+.hero{
+  padding:130px 0 110px;
+}
+.hero-copy{
+  font-family:var(--serif);
+  font-size:clamp(17px,2.6vw,21px);
+  line-height:2.5;
+  letter-spacing:0.08em;
+}
+.hero-copy .lead{
+  font-size:clamp(21px,3.4vw,28px);
+  line-height:2.2;
+  margin-bottom:2.2em;
+  font-weight:500;
+}
+.hero-copy .stanza{margin-bottom:2.2em;}
+.hero-copy .em{color:var(--amber-deep);}
+.hero-photo{
+  margin-top:90px;
+  aspect-ratio:16/9;
+  background:linear-gradient(160deg,var(--bg-deep),#E4DECF);
+  border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--ink-soft);
+  font-size:13px;
+  letter-spacing:0.15em;
+}
+.voices{background:var(--bg-deep);}
+.voice-list{
+  list-style:none;
+  max-width:560px;
+  margin:0 auto;
+}
+.voice-list li{
+  font-family:var(--serif);
+  font-size:clamp(16px,2.4vw,19px);
+  line-height:2;
+  padding:26px 0;
+  border-bottom:1px solid var(--line);
+  letter-spacing:0.06em;
+}
+.voice-list li:last-child{border-bottom:none;}
+.voices .after{
+  margin-top:64px;
+  text-align:center;
+  color:var(--ink-soft);
+  font-size:15px;
+}
+.philosophy .keyline{
+  font-family:var(--serif);
+  font-size:clamp(19px,3vw,24px);
+  line-height:2.2;
+  color:var(--ink);
+  padding-left:24px;
+  border-left:2px solid var(--amber);
+  margin:56px 0;
+}
+.contrast{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+  margin:56px 0;
+}
+.contrast > div{
+  background:var(--bg);
+  padding:36px 28px;
+}
+.contrast .label{
+  font-size:12px;
+  letter-spacing:0.3em;
+  margin-bottom:16px;
+  color:var(--ink-soft);
+}
+.contrast .not .label::before{content:"— ";}
+.contrast .yes{background:#FBF9F3;}
+.contrast .yes .label{color:var(--amber);}
+.contrast p{
+  font-family:var(--serif);
+  font-size:16px;
+  line-height:2;
+  margin:0;
+}
+@media(max-width:640px){
+  .contrast{grid-template-columns:1fr;}
+}
+.system{background:var(--bg-deep);}
+.system-grid{
+  display:grid;
+  gap:56px;
+  margin-top:24px;
+}
+.system-item h3{
+  font-family:var(--serif);
+  font-weight:500;
+  font-size:19px;
+  letter-spacing:0.1em;
+  margin-bottom:16px;
+  color:var(--ink);
+}
+.system-item h3 .mark{
+  color:var(--amber);
+  margin-right:10px;
+}
+.system-item p{
+  font-size:15px;
+  color:var(--ink-soft);
+  line-height:2.1;
+}
+.theme-tags{
+  display:flex;flex-wrap:wrap;gap:10px;
+  margin-top:20px;
+}
+.theme-tags span{
+  font-family:var(--serif);
+  font-size:14px;
+  padding:6px 18px;
+  border:1px solid var(--line);
+  background:var(--bg);
+  color:var(--ink);
+  letter-spacing:0.1em;
+}
+.experiment{
+  background:var(--bg);
+  border:1px solid var(--line);
+  padding:28px;
+  margin-top:20px;
+}
+.experiment p{
+  font-family:var(--serif);
+  font-size:15px;
+  color:var(--ink);
+  margin-bottom:0.8em;
+}
+.experiment p:last-child{margin-bottom:0;}
+.experiment .cap{
+  font-family:var(--sans);
+  font-size:12px;
+  letter-spacing:0.25em;
+  color:var(--green);
+  margin-bottom:18px;
+}
+.host-inner{
+  display:grid;
+  grid-template-columns:200px 1fr;
+  gap:56px;
+  align-items:start;
+}
+.host-photo{
+  aspect-ratio:3/4;
+  background:linear-gradient(160deg,var(--bg-deep),#E4DECF);
+  border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--ink-soft);font-size:12px;letter-spacing:0.15em;
+  overflow:hidden;
+}
+.host-photo img{
+  width:100%;height:100%;
+  object-fit:cover;
+  display:block;
+}
+.host-text p{font-size:15px;color:var(--ink-soft);}
+.host-text .credo{
+  font-family:var(--serif);
+  font-size:17px;
+  color:var(--ink);
+  line-height:2.2;
+  margin:32px 0;
+  padding-left:24px;
+  border-left:2px solid var(--green);
+}
+.host-text .results{
+  font-size:13px;
+  line-height:2.2;
+  color:var(--ink-soft);
+  margin-top:24px;
+}
+@media(max-width:640px){
+  .host-inner{grid-template-columns:1fr;}
+  .host-photo{max-width:220px;}
+}
+.join{background:var(--bg-deep);}
+.join-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:48px 0;
+  font-size:15px;
+}
+.join-table th,.join-table td{
+  text-align:left;
+  padding:20px 8px;
+  border-bottom:1px solid var(--line);
+  vertical-align:top;
+}
+.join-table th{
+  font-weight:500;
+  color:var(--ink-soft);
+  width:9em;
+  font-size:13px;
+  letter-spacing:0.15em;
+}
+.join-table td{font-family:var(--serif);}
+.note{font-size:13px;color:var(--ink-soft);}
+.cta{
+  text-align:center;
+  padding:120px 0;
+}
+.cta h2{margin-bottom:24px;}
+.cta p{color:var(--ink-soft);margin-bottom:48px;}
+.btn{
+  display:inline-block;
+  font-family:var(--sans);
+  font-size:15px;
+  letter-spacing:0.2em;
+  color:#fff;
+  background:var(--amber);
+  padding:20px 56px;
+  text-decoration:none;
+  transition:background .3s ease;
+}
+.btn:hover{background:var(--amber-deep);}
+.btn:focus-visible{outline:2px solid var(--green);outline-offset:4px;}
+.cta .small{
+  display:block;
+  margin-top:24px;
+  font-size:13px;
+  color:var(--ink-soft);
+}
+footer{
+  border-top:1px solid var(--line);
+  padding:56px 0;
+  text-align:center;
+}
+footer .foot-logo{
+  font-family:var(--serif);
+  font-size:18px;
+  letter-spacing:0.25em;
+  margin-bottom:24px;
+}
+footer .foot-logo span{color:var(--amber);}
+footer a{
+  color:var(--green);
+  font-size:13px;
+  text-decoration:none;
+  margin:0 14px;
+  letter-spacing:0.1em;
+}
+footer a:hover{text-decoration:underline;}
+footer .copy{
+  margin-top:32px;
+  font-size:12px;
+  color:var(--ink-soft);
+  letter-spacing:0.1em;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#top">灯<span>サロン</span></a>
+    <nav>
+      <a href="#about">灯サロンとは</a>
+      <a href="#system">仕組み</a>
+      <a href="#host">主宰者</a>
+      <a href="#join">参加案内</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-copy fade">
+      <p class="lead">人を支える立場だからこそ、<br>誰にも話せないことがある。</p>
+      <p class="stanza">
+        部下のこと。<br>
+        子どものこと。<br>
+        家族のこと。<br>
+        そして、自分自身のこと。
+      </p>
+      <p class="stanza">
+        人は、教えられることで成長するのではありません。<br>
+        自分の言葉を大切に聴いてもらえたとき、<br>
+        自分で考え始めます。
+      </p>
+      <p class="stanza">
+        灯サロンは、答えを教わる場所ではありません。
+      </p>
+      <p class="stanza">
+        自分の言葉で語り、<br>
+        互いの言葉に耳を傾け、<br>
+        <span class="em">人との関わり方を育み直す</span>対話の場です。
+      </p>
+    </div>
+    <div class="hero-photo fade">［写真：静かに対話する人たち］</div>
+  </div>
+</section>
+
+<section class="voices">
+  <div class="container">
+    <div class="center fade">
+      <p class="eyebrow">こんな感覚はありませんか</p>
+    </div>
+    <ul class="voice-list fade">
+      <li>「頑張っているのに、人が育たない。」</li>
+      <li>「正しいことを言っているのに、相手に届かない。」</li>
+      <li>「話を聴いているつもりなのに、本音が出てこない。」</li>
+      <li>「家族とも、仕事のように話してしまう。」</li>
+      <li>「肩書きを外した私は、何を大切にしているんだろう。」</li>
+    </ul>
+    <p class="after fade">
+      それは、技術の問題ではなく、関係性の問題かもしれません。
+    </p>
+  </div>
+</section>
+
+<section class="philosophy" id="about">
+  <div class="container">
+    <p class="eyebrow fade">灯サロンとは</p>
+    <h2 class="fade">支える人が、自分自身も支えられながら、<br>関係性を育み直す場所。</h2>
+    <div class="fade">
+      <p>
+        支える相手は、部下かもしれない。子どもかもしれない。親かもしれない。
+        受講生や、患者さんや、お客様かもしれない。
+      </p>
+      <p>
+        灯サロンは、「管理職のサロン」でも「親のサロン」でもありません。
+        人生の中で「支える側」になった人が、職業や立場を越えて集まり、
+        同じテーマで深く対話する場です。
+      </p>
+    </div>
+    <div class="keyline fade">
+      ここに集まるのは、「変わりたい人」ではなく、<br>
+      「よりよく在りたい人」です。
+    </div>
+    <div class="contrast fade">
+      <div class="not">
+        <p class="label">灯サロンでないもの</p>
+        <p>答えを教わる場所。<br>癒やされて、終わる場所。<br>誰かが灯し、誰かがただ照らされる場所。</p>
+      </div>
+      <div class="yes">
+        <p class="label">灯サロンであるもの</p>
+        <p>尊重されながら、挑戦できる場。<br>問いを持ち続ける仲間と出会う場。<br>一人の灯が、また誰かの灯になる場所。</p>
+      </div>
+    </div>
+    <div class="fade">
+      <p>
+        一人の灯が、誰かの灯になる。
+        ここでは、あなたも場をつくる人であり、誰かの学びに貢献する人であり、
+        同時に支えられる人です。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="system" id="system">
+  <div class="container">
+    <p class="eyebrow fade">サロンの仕組み</p>
+    <h2 class="fade">学ぶ。試す。持ち寄る。<br>その循環が、あなたの現場を学びの場に変えます。</h2>
+
+    <div class="system-grid">
+      <div class="system-item fade">
+        <h3><span class="mark">月例会</span>月1回のオンライン対話（1.5〜2時間）</h3>
+        <p>
+          前半は、私から短く、考え方を差し出します。
+          あとの時間はすべて、あなた自身の現場に持ち帰るための対話です。
+          仕事の話も、家庭の話も、分けません。人との関わり方は、どこでも同じだからです。
+          「話してよかった」で終わるのではなく、「明日から、少し関わり方を変えてみよう」——
+          そう思える時間を目指しています。
+        </p>
+        <div class="theme-tags">
+          <span>聴く</span><span>問い</span><span>承認</span><span>対立</span><span>信頼</span><span>境界線</span><span>リーダーシップ</span>
+        </div>
+      </div>
+
+      <div class="system-item fade">
+        <h3><span class="mark">実験</span>毎月、小さな実践を持ち帰る</h3>
+        <p>
+          学びは、会の中で終わりません。毎回ひとつ、現場での「実験」を持ち帰り、
+          翌月にその結果を持ち寄ります。うまくいったかどうかではなく、
+          「何が起きたか」を共有します。
+        </p>
+        <div class="experiment">
+          <p class="cap">実験の例</p>
+          <p>「今週は、部下の話を3分間、質問だけで聴く。」</p>
+          <p>「家族との会話で『どう思う？』を一回増やす。」</p>
+          <p>「会議で、一番最後に自分の意見を言う。」</p>
+        </div>
+      </div>
+
+      <div class="system-item fade">
+        <h3><span class="mark">灯ノート</span>自分の変化を、見続けるために</h3>
+        <p>
+          毎月書くのは3つだけ。「今月、一番心が動いた出来事」「今月、実験したこと」「来月、試してみたいこと」。
+          誰にも提出しません。一年後に読み返すと、自分がどう変わったかが見えてきます。
+        </p>
+      </div>
+
+      <div class="system-item fade">
+        <h3><span class="mark">灯グループ</span>4〜5人の小さな対話</h3>
+        <p>
+          月1回30分、オンラインで話します。テーマは「今月の実験」「困っていること」「来月の一歩」。
+          私がその場にいなくても、対話は続いていきます。
+        </p>
+      </div>
+
+      <div class="system-item fade">
+        <h3><span class="mark">灯の集い</span>年に数回の、リアルな場</h3>
+        <p>
+          東京・名古屋などで全員が集まり、「今年、自分は何を育てたか」を語ります。
+          講演会でも、発表会でもありません。物語を持ち寄る場です。
+        </p>
+      </div>
+
+      <div class="system-item fade">
+        <h3><span class="mark">役割の循環</span>参加者も、場を育てる側になる</h3>
+        <p>
+          毎回、誰かがテーマを提供する人になり、誰かが問いを返す役になり、
+          誰かが気づきをまとめます。運営者だけが場をつくるのではありません。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="host">
+  <div class="container wide">
+    <p class="eyebrow fade">主宰者</p>
+    <div class="host-inner fade">
+      <div class="host-photo"><img src="images/host.jpg" alt="灯サロン主宰者" loading="lazy"></div>
+      <div class="host-text">
+        <p>
+          企業研修講師・コーチとして、官公庁から大手企業まで、
+          コミュニケーション、コーチング、リーダーシップ、マネジメントなど
+          多様なテーマの研修を数多く手がけてきました。
+          演習を通した体感型の「気づき」と、受講生同士の相互コミュニケーションの構築を大切にしています。
+        </p>
+        <div class="credo">
+          人は、能力や成果によって価値が決まる存在ではありません。<br>
+          自分の言葉を尊重される体験を通して、<br>
+          自らの存在を肯定できるようになります。
+        </div>
+        <p>
+          その実感が、自ら考え、自ら選び、自ら行動する力を育みます。
+          企業研修も、コーチングも、保護者支援も——私がしてきた仕事は、
+          すべて「支える人が、よりよい関係性を築くための支援」でした。
+          灯サロンは、その延長線上にあります。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="join" id="join">
+  <div class="container">
+    <p class="eyebrow fade">参加案内</p>
+    <h2 class="fade">まずは一度、この場の空気に<br>触れてみてください。</h2>
+    <table class="join-table fade">
+      <tr>
+        <th>形式</th>
+        <td>月額制メンバーシップ</td>
+      </tr>
+      <tr>
+        <th>月例会</th>
+        <td>月1回・オンライン開催（1.5〜2時間）</td>
+      </tr>
+      <tr>
+        <th>月会費</th>
+        <td>8,800円〜11,000円（税込・予定）<br><span class="note">※正式な金額は体験会にてご案内します。</span></td>
+      </tr>
+      <tr>
+        <th>体験参加</th>
+        <td>「灯サロン体験会」に1回ご参加いただけます。雰囲気を知ってからご入会ください。</td>
+      </tr>
+      <tr>
+        <th>その他</th>
+        <td>灯グループ（月1回30分・オンライン）／灯の集い（年数回・東京・名古屋など）</td>
+      </tr>
+    </table>
+    <p class="note fade">
+      全国どこからでも参加できます。子育て中の方、介護中の方も、無理のない形でご参加いただけます。
+    </p>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <div class="fade">
+      <h2>あなたの灯を、持ち寄ってください。</h2>
+      <p>まずは体験会で、対話の場を味わってみてください。</p>
+      <a class="btn" href="#">体験会に申し込む</a>
+      <span class="small">※申し込みフォームは準備中です。</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p class="foot-logo">灯<span>サロン</span></p>
+    <p>
+      <a href="https://hit-coaching.com/" target="_blank" rel="noopener">企業研修・コーチングはこちら（HIT Coaching）</a>
+    </p>
+    <p style="margin-top:16px;">
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="#" aria-label="X">X</a>
+    </p>
+    <p class="copy">&copy; 2026 灯サロン</p>
