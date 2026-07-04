@@ -3,8 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>灯サロン｜支える人が、自分自身も支えられながら、関係性を育み直す場所</title>
-<meta name="description" content="灯サロンは、人を支える立場にある人が、自分の言葉で語り、互いの言葉に耳を傾け、人との関わり方を育み直す月額制の対話コミュニティです。">
+<title>灯サロン｜人を支える人のためのオンライン対話コミュニティ</title>
+<meta name="description" content="灯サロンは、人を支える立場にある方のためのオンライン対話コミュニティです。部下の育成、子育て、職場の人間関係に向き合う方が、自分の言葉で語り、互いの言葉に耳を傾けながら、人との関わり方を育み直す場所です。">
+
+<!-- SNS・LINEでシェアされたときの表示設定（★独自ドメイン取得後は og:url を変更） -->
+<meta property="og:title" content="灯サロン｜人を支える人のためのオンライン対話コミュニティ">
+<meta property="og:description" content="部下の育成、子育て、職場の人間関係に向き合う方が、自分の言葉で語り、互いの言葉に耳を傾けながら、人との関わり方を育み直す場所です。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hitominakao58-beep.github.io/tomoshibi-salon/">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet">
@@ -102,6 +109,16 @@ nav a:hover{color:var(--amber);}
 .hero{
   padding:130px 0 110px;
 }
+.hero-h1{
+  font-family:var(--serif);
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:0.28em;
+  color:var(--ink-soft);
+  margin-bottom:56px;
+  line-height:2;
+}
+.hero-h1 .site{color:var(--amber-deep);}
 .hero-copy{
   font-family:var(--serif);
   font-size:clamp(17px,2.6vw,21px);
@@ -314,6 +331,14 @@ nav a:hover{color:var(--amber);}
 .join-table td{font-family:var(--serif);}
 .note{font-size:13px;color:var(--ink-soft);}
 
+/* ---------- 体験会で持ち帰れるもの ---------- */
+.trial .trial-body p{
+  font-family:var(--serif);
+  font-size:clamp(16px,2.4vw,18px);
+  line-height:2.4;
+  letter-spacing:0.06em;
+}
+
 /* ---------- CTA ---------- */
 .cta{
   text-align:center;
@@ -380,6 +405,7 @@ footer .copy{
       <a href="#system">仕組み</a>
       <a href="#host">主宰者</a>
       <a href="#join">参加案内</a>
+      <a href="blog/index.html">読みもの</a>
     </nav>
   </div>
 </header>
@@ -387,6 +413,7 @@ footer .copy{
 <!-- ヒーロー -->
 <section class="hero" id="top">
   <div class="container">
+    <h1 class="hero-h1 fade"><span class="site">灯サロン</span>｜人を支える人のための、オンラインの対話コミュニティ</h1>
     <div class="hero-copy fade">
       <p class="lead">人を支える立場だからこそ、<br>誰にも話せないことがある。</p>
       <p class="stanza">
@@ -420,9 +447,10 @@ footer .copy{
       <p class="eyebrow">こんな感覚はありませんか</p>
     </div>
     <ul class="voice-list fade">
-      <li>「頑張っているのに、人が育たない。」</li>
+      <li>「がんばっているのに、部下が育たない。」</li>
       <li>「正しいことを言っているのに、相手に届かない。」</li>
-      <li>「話を聴いているつもりなのに、本音が出てこない。」</li>
+      <li>「1on1で聴いているつもりなのに、本音が出てこない。」</li>
+      <li>「子どもとの関わり方に、正解が見えなくなってきた。」</li>
       <li>「家族とも、仕事のように話してしまう。」</li>
       <li>「肩書きを外した私は、何を大切にしているんだろう。」</li>
     </ul>
@@ -584,15 +612,15 @@ footer .copy{
       </tr>
       <tr>
         <th>月例会</th>
-        <td>月1回・オンライン開催（1.5〜2時間）</td>
+        <td>毎月第2水曜日・オンライン開催（1.5〜2時間）</td>
       </tr>
       <tr>
         <th>月会費</th>
-        <td>8,800円〜11,000円（税込・予定）<br><span class="note">※正式な金額は体験会にてご案内します。</span></td>
+        <td>9,900円（税込）</td>
       </tr>
       <tr>
         <th>体験参加</th>
-        <td>毎月第3水曜日 20:00〜21:30に「灯サロン体験会」を開催しています。雰囲気を知ってからご入会ください。</td>
+        <td>毎月第3水曜日 20:00〜21:30に「灯サロン体験会」（5,500円）を開催しています。雰囲気を知ってからご入会ください。</td>
       </tr>
       <tr>
         <th>その他</th>
@@ -605,14 +633,33 @@ footer .copy{
   </div>
 </section>
 
+<!-- 体験会で持ち帰れるもの -->
+<section class="trial" id="trial">
+  <div class="container">
+    <p class="eyebrow fade">体験会で持ち帰れるもの</p>
+    <h2 class="fade">体験会は、灯サロンのひと月を、<br>そのまま小さく体験する時間です。</h2>
+    <div class="trial-body fade">
+      <p>
+        いま抱えている「人との関わり」のテーマをひとつ、自分の言葉にしてみること。
+        評価も助言もされずに、最後まで聴いてもらうこと。
+        そして、ほかの参加者の言葉のなかに、思いがけず自分へのヒントを見つけること。
+      </p>
+      <p>
+        帰るときには、明日からの日々で試してみたくなる、
+        小さな「実験」をひとつ、手のなかに持っていただけるように過ごします。
+      </p>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta">
   <div class="container">
     <div class="fade">
       <h2>あなたの灯を、持ち寄ってください。</h2>
       <p>まずは体験会で、対話の場を味わってみてください。</p>
-      <a class="btn" href="https://forms.gle/jR28eJUwxNxv6aLY8" target="_blank" rel="noopener">体験会に申し込む</a>
-      <span class="small">灯サロン体験会：第3水曜日 20:00〜21:30（オンライン）</span>
+      <a class="btn" href="https://mosh.jp/services/384847" target="_blank" rel="noopener">体験会に申し込む</a>
+      <span class="small">灯サロン体験会：第3水曜日 20:00〜21:30（オンライン・5,500円）</span>
     </div>
   </div>
 </section>
@@ -621,6 +668,7 @@ footer .copy{
   <div class="container">
     <p class="foot-logo">灯<span>サロン</span></p>
     <p>
+      <a href="blog/index.html">読みもの</a>
       <a href="https://hit-coaching.com/" target="_blank" rel="noopener">企業研修・コーチングはこちら（HIT Coaching）</a>
     </p>
     <p style="margin-top:16px;">
