@@ -115,7 +115,7 @@ nav a:hover{color:var(--amber);}
   font-weight:500;
   letter-spacing:0.28em;
   color:var(--ink-soft);
-  margin-bottom:56px;
+  margin:8px 0 48px;
   line-height:2;
 }
 .hero-h1 .site{color:var(--amber-deep);}
@@ -142,6 +142,13 @@ nav a:hover{color:var(--amber);}
   color:var(--ink-soft);
   font-size:13px;
   letter-spacing:0.15em;
+  overflow:hidden;
+}
+.hero-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 
 /* ---------- こんな感覚 ---------- */
@@ -413,7 +420,6 @@ footer .copy{
 <!-- ヒーロー -->
 <section class="hero" id="top">
   <div class="container">
-    <h1 class="hero-h1 fade"><span class="site">灯サロン</span>｜人を支える人のための、オンラインの対話コミュニティ</h1>
     <div class="hero-copy fade">
       <p class="lead">人を支える立場だからこそ、<br>誰にも話せないことがある。</p>
       <p class="stanza">
@@ -422,6 +428,7 @@ footer .copy{
         家族のこと。<br>
         そして、自分自身のこと。
       </p>
+      <h1 class="hero-h1">人を支える人のための<br>オンライン対話コミュニティ「<span class="site">灯サロン</span>」</h1>
       <p class="stanza">
         人は、教えられることで成長するのではありません。<br>
         自分の言葉を大切に聴いてもらえたとき、<br>
@@ -436,7 +443,7 @@ footer .copy{
         <span class="em">人との関わり方を育み直す</span>対話の場です。
       </p>
     </div>
-    <div class="hero-photo fade">［写真：静かに対話する人たち］</div>
+    <div class="hero-photo fade"><img src="images/hero.jpg" alt="円になって語り合う人たち"></div>
   </div>
 </section>
 
@@ -660,6 +667,7 @@ footer .copy{
       <p>まずは体験会で、対話の場を味わってみてください。</p>
       <a class="btn" href="https://mosh.jp/services/384847" target="_blank" rel="noopener">体験会に申し込む</a>
       <span class="small">灯サロン体験会：第3水曜日 20:00〜21:30（オンライン・5,500円）</span>
+      <span class="small" style="margin-top:8px;">※お申し込みには予約サイト「MOSH」の無料アカウント登録（メールアドレスのみ）が必要です。1〜2分で完了します。</span>
     </div>
   </div>
 </section>
